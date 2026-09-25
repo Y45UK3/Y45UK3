@@ -109,13 +109,13 @@ function contributionsSvg(months) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <defs>
     <linearGradient id="bg" x1="0" x2="1">
-      <stop offset="0" stop-color="#0d1117"/>
-      <stop offset="1" stop-color="#111827"/>
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#1E2B57"/>
     </linearGradient>
     <linearGradient id="barGradient" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0" stop-color="#2563EB"/>
-      <stop offset="0.55" stop-color="#7C3AED"/>
-      <stop offset="1" stop-color="#A78BFA"/>
+      <stop offset="0" stop-color="#1E2B57"/>
+      <stop offset="0.55" stop-color="#E30118"/>
+      <stop offset="1" stop-color="#FDD900"/>
     </linearGradient>
     <style>
       .title{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#e6edf3}
@@ -159,7 +159,7 @@ function languagesSvg(entries) {
   const width = 450;
   const height = 300;
   const total = entries.reduce((sum, [, bytes]) => sum + bytes, 0) || 1;
-  const colors = ["#7C3AED", "#2563EB", "#60A5FA", "#A78BFA", "#22C55E", "#F59E0B", "#EC4899"];
+  const colors = ["#E30118", "#FDD900", "#4570C0", "#C0BFBF", "#EA1C2D", "#1E2B57", "#FFFFFF"];
   const cx = entries.length ? 120 : 225;
   const cy = 158;
   const r = 72;
@@ -187,8 +187,8 @@ function languagesSvg(entries) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <defs>
     <linearGradient id="bg2" x1="0" x2="1">
-      <stop offset="0" stop-color="#0d1117"/>
-      <stop offset="1" stop-color="#111827"/>
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#1E2B57"/>
     </linearGradient>
     <style>
       .title{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#e6edf3}
@@ -202,8 +202,8 @@ function languagesSvg(entries) {
   <text x="24" y="34" class="title">Top Languages</text>
   <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#21262d" stroke-width="${stroke}"/>
   ${arcs}
-  <text x="${cx}" y="${cy - 3}" text-anchor="middle" class="center1">${entries.length}</text>
-  <text x="${cx}" y="${cy + 15}" text-anchor="middle" class="center2">languages</text>
+  <text x="${cx}" y="${cy - 3}" text-anchor="middle" class="center1">${entries.length ? entries.length : "—"}</text>
+  <text x="${cx}" y="${cy + 15}" text-anchor="middle" class="center2">${entries.length ? "languages" : "no public language data"}</text>
   ${legend}
 </svg>`;
 }
@@ -276,12 +276,12 @@ function profileStatsSvg(stats) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <defs>
     <linearGradient id="statsBg" x1="0" x2="1">
-      <stop offset="0" stop-color="#0d1117"/>
-      <stop offset="1" stop-color="#111827"/>
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#1E2B57"/>
     </linearGradient>
     <linearGradient id="statsAccent" x1="0" x2="1">
-      <stop offset="0" stop-color="#7C3AED"/>
-      <stop offset="1" stop-color="#2563EB"/>
+      <stop offset="0" stop-color="#E30118"/>
+      <stop offset="1" stop-color="#1E2B57"/>
     </linearGradient>
     <style>
       .title{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#e6edf3}
