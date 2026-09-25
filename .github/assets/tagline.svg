@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="72" viewBox="0 0 900 72">
+<defs>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;font-weight:600;fill:#f4f7fb}
+    .sub{font-size:18px;letter-spacing:.2px}
+  </style>
+</defs>
+<rect width="900" height="72" fill="transparent"/>
+<g text-anchor="middle" transform="translate(450 43)">
+  <text class="sub" opacity="1">Esports Operations • Automation • Development • AI Workflows
+    <animate attributeName="opacity" values="1;1;0;0;0;0;0;1" keyTimes="0;.18;.24;.48;.58;.82;.9;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+  <text class="sub" opacity="0">Building production tools and internal systems
+    <animate attributeName="opacity" values="0;0;1;1;0;0;0;0" keyTimes="0;.22;.28;.47;.54;.74;.9;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+  <text class="sub" opacity="0">Turning operations problems into software
+    <animate attributeName="opacity" values="0;0;0;0;1;1;0;0" keyTimes="0;.2;.4;.52;.58;.77;.84;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+  <text class="sub" opacity="0">Current focus updates automatically from GitHub activity
+    <animate attributeName="opacity" values="0;0;0;0;0;0;1;0" keyTimes="0;.2;.4;.55;.7;.8;.86;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+</g>
+</svg>
