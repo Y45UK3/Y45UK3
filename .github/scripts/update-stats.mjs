@@ -160,7 +160,7 @@ function languagesSvg(entries) {
   const height = 300;
   const total = entries.reduce((sum, [, bytes]) => sum + bytes, 0) || 1;
   const colors = ["#7C3AED", "#2563EB", "#60A5FA", "#A78BFA", "#22C55E", "#F59E0B", "#EC4899"];
-  const cx = 120;
+  const cx = entries.length ? 120 : 225;
   const cy = 158;
   const r = 72;
   const stroke = 28;
@@ -208,11 +208,103 @@ function languagesSvg(entries) {
 </svg>`;
 }
 
+
+async function getProfileStats() {
+  const query = `
+    query($login: String!) {
+      user(login: $login) {
+        repositories(ownerAffiliations: OWNER, privacy: PUBLIC) { totalCount }
+        followers { totalCount }
+        following { totalCount }
+        starredRepositories { totalCount }
+        contributionsCollection {
+          contributionCalendar { totalContributions }
+          totalCommitContributions
+          totalIssueContributions
+          totalPullRequestContributions
+          totalPullRequestReviewContributions
+          restrictedContributionsCount
+        }
+      }
+    }
+  `;
+
+  const data = await github("https://api.github.com/graphql", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query, variables: { login: username } }),
+  });
+
+  const user = data?.data?.user;
+  const c = user?.contributionsCollection || {};
+  return {
+    totalContributions: c?.contributionCalendar?.totalContributions || 0,
+    commits: c.totalCommitContributions || 0,
+    pullRequests: c.totalPullRequestContributions || 0,
+    issues: c.totalIssueContributions || 0,
+    reviews: c.totalPullRequestReviewContributions || 0,
+    privateContributions: c.restrictedContributionsCount || 0,
+    publicRepos: user?.repositories?.totalCount || 0,
+    followers: user?.followers?.totalCount || 0,
+    following: user?.following?.totalCount || 0,
+    stars: user?.starredRepositories?.totalCount || 0,
+  };
+}
+
+function profileStatsSvg(stats) {
+  const width = 450;
+  const height = 300;
+  const items = [
+    ["Contributions", stats.totalContributions],
+    ["Commits", stats.commits],
+    ["Pull Requests", stats.pullRequests],
+    ["Issues", stats.issues],
+    ["Reviews", stats.reviews],
+    ["Public Repos", stats.publicRepos],
+  ];
+
+  const rows = items.map(([label, value], i) => {
+    const col = i % 2;
+    const row = Math.floor(i / 2);
+    const x = col === 0 ? 40 : 245;
+    const y = 105 + row * 58;
+    return `
+      <text x="${x}" y="${y}" class="value">${value}</text>
+      <text x="${x}" y="${y + 18}" class="label">${label}</text>`;
+  }).join("");
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+  <defs>
+    <linearGradient id="statsBg" x1="0" x2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="statsAccent" x1="0" x2="1">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <style>
+      .title{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#e6edf3}
+      .sub{font:500 11px 'Segoe UI',Arial,sans-serif;fill:#8b949e}
+      .value{font:700 24px 'Segoe UI',Arial,sans-serif;fill:#e6edf3}
+      .label{font:500 11px 'Segoe UI',Arial,sans-serif;fill:#8b949e}
+    </style>
+  </defs>
+  <rect width="100%" height="100%" rx="14" fill="url(#statsBg)" stroke="#30363d"/>
+  <rect x="0" y="0" width="6" height="300" rx="3" fill="url(#statsAccent)"/>
+  <text x="28" y="34" class="title">GitHub Stats</text>
+  <text x="28" y="54" class="sub">Last 12 months + public profile totals</text>
+  ${rows}
+</svg>`;
+}
+
 const contributions = await getContributions();
 const languages = await getLanguages();
+const profileStats = await getProfileStats();
 
 fs.writeFileSync(path.join(outDir, "contributions.svg"), contributionsSvg(contributions));
 fs.writeFileSync(path.join(outDir, "languages.svg"), languagesSvg(languages));
+fs.writeFileSync(path.join(outDir, "stats.svg"), profileStatsSvg(profileStats));
 
 console.log("Profile stats generated for", username);
 
