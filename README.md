@@ -1,15 +1,15 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6A5ACD,50:7C3AED,100:2563EB&height=190&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=16&descAlignY=58" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E2B57,55:1E2B57,100:E30118&height=190&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=16&descAlignY=58" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
 
 <a href="https://github.com/Y45UK3">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=760&lines=Esports+Operations;Building+the+IGE+Invoice+Platform;Automation+%E2%80%A2+Operations+%E2%80%A2+Development;Building+with+AI;Turning+workflows+into+tools;Sri+Lanka+%F0%9F%87%B1%F0%9F%87%B0" alt="Animated introduction" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&duration=2800&pause=900&color=FDD900&center=true&vCenter=true&width=760&lines=Esports+Operations;Building+the+IGE+Invoice+Platform;Automation+%E2%80%A2+Operations+%E2%80%A2+Development;Building+with+AI;Turning+workflows+into+tools;Sri+Lanka+%F0%9F%87%B1%F0%9F%87%B0" alt="Animated introduction" />
 </a>
 
 <p>
-  <img src="https://komarev.com/ghpvc/?username=Y45UK3&style=for-the-badge&color=6A5ACD&label=PROFILE+VIEWS" alt="Profile views" />
-  <a href="https://github.com/Y45UK3?tab=repositories"><img src="https://img.shields.io/badge/PROJECTS-2563EB?style=for-the-badge&logo=github&logoColor=white" alt="Projects" /></a>
-  <a href="https://github.com/Y45UK3/IGE-INVOICE-GEN-v1.0.0"><img src="https://img.shields.io/badge/IGE%20INVOICE%20PLATFORM-7C3AED?style=for-the-badge&logo=githubactions&logoColor=white" alt="IGE Invoice Platform" /></a>
+  <img src="https://komarev.com/ghpvc/?username=Y45UK3&style=for-the-badge&color=E30118&label=PROFILE+VIEWS" alt="Profile views" />
+  <a href="https://github.com/Y45UK3?tab=repositories"><img src="https://img.shields.io/badge/PROJECTS-1E2B57?style=for-the-badge&logo=github&logoColor=white" alt="Projects" /></a>
+  <a href="https://github.com/Y45UK3/IGE-INVOICE-GEN-v1.0.0"><img src="https://img.shields.io/badge/IGE%20INVOICE%20PLATFORM-E30118?style=for-the-badge&logo=githubactions&logoColor=white" alt="IGE Invoice Platform" /></a>
 </p>
 
 </div>
@@ -98,6 +98,6 @@ A production-focused invoice and operations tool built to simplify internal work
 
 <sub>Operations mindset. Builder mentality.</sub>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,50:7C3AED,100:6A5ACD&height=95&section=footer" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:E30118,45:1E2B57,100:1E2B57&height=95&section=footer" width="100%" alt="" />
 
 </div>
