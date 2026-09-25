@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const id = "515551543941005313";
-const out = path.join(process.cwd(), ".github", "assets", "discord-presence.svg");
+const out = path.join(process.cwd(), ".github", "assets", "discord-presence-v2.svg");
 
 const esc = (s = "") => String(s)
   .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
@@ -34,7 +34,7 @@ try {
 const colors = { online:"#23A55A", idle:"#F0B232", dnd:"#F23F43", offline:"#80848E", unknown:"#80848E" };
 const dot = colors[status] || colors.unknown;
 const label = status === "dnd" ? "Do Not Disturb" : status.charAt(0).toUpperCase() + status.slice(1);
-const note = ok ? "Live Discord presence" : "Presence unavailable via Lanyard — profile link still works";
+const note = ok ? "Live Discord presence" : "Status unavailable";
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210">
 <defs>
