@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E2B57,55:1E2B57,100:E30118&height=190&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=16&descAlignY=58" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E2B57,55:1E2B57,100:E30118&height=245&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=40&fontColor=ffffff&fontAlignY=34&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=15&descAlignY=52" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=18&duration=2600&pause=850&color=FFFFFF&center=true&vCenter=true&width=780&lines=Esports+Operations+%E2%80%A2+Automation+%E2%80%A2+Development+%E2%80%A2+AI+Workflows;Building+production+tools+and+internal+systems;Turning+operations+problems+into+software;Currently+building+the+IGE+Invoice+Platform" alt="Animated profile tagline" />
+  <img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/tagline.svg" width="100%" alt="Animated profile tagline" />
 </div>
 
 <p>
@@ -24,13 +24,11 @@
 
 ## About Me
 
-```text
-IDENTITY  : Thumula "Y45UK3" Kulajitha
-DOMAIN    : Esports Operations / Automation / Development
-FOCUS     : Internal tools • AI workflows • Production systems
-LOCATION  : Sri Lanka
-STATUS    : Building
-```
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/about-card.svg" width="100%" alt="About Thumula Y45UK3 Kulajitha" />
+
+</div>
 
 I work at the intersection of **esports operations and software** — turning repetitive operational problems into practical tools, automations, and production workflows.
 
@@ -74,13 +72,13 @@ I work at the intersection of **esports operations and software** — turning re
 <div align="center">
 
 <a href="https://discord.com/users/515551543941005313">
-  <img src="https://lanyard.cnrad.dev/api/515551543941005313?bg=07111f&borderRadius=14px&idleMessage=Building%20something...&hideDiscrim=true" width="520" alt="Y45UK3 Discord presence" />
+  <img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/discord-presence.svg" width="100%" alt="Y45UK3 Discord presence" />
 </a>
 
-<br/><br/>
+<br/>
 
 <a href="https://discord.com/users/515551543941005313">
-  <img src="https://img.shields.io/badge/ADD%20Y45UK3%20ON%20DISCORD-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Add Y45UK3 on Discord" />
+  <img src="https://img.shields.io/badge/OPEN%20DISCORD%20PROFILE-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Open Y45UK3 Discord profile" />
 </a>
 
 </div>
