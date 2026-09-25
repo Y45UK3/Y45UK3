@@ -55,3 +55,5 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" vi
 
 fs.writeFileSync(out, svg);
 console.log("Discord presence refreshed:", status, username);
+
+// presence-check: joined Lanyard server
