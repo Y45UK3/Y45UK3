@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
+  <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#22314f" stroke-width="1" opacity=".25"/></pattern>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif}
+    .k{font-size:11px;font-weight:700;fill:#7890b7;letter-spacing:1.1px}
+    .v{font-size:15px;font-weight:650;fill:#e9f0fb}
+    .hero{font-size:25px;font-weight:800;fill:#fff}
+    .muted{font-size:12px;font-weight:500;fill:#9fb2d0}
+  </style>
+</defs>
+<rect width="900" height="220" rx="16" fill="url(#bg)" stroke="#2b3b5f"/><rect width="900" height="220" rx="16" fill="url(#grid)"/>
+<rect x="0" width="6" height="220" rx="3" fill="#E30118"/>
+<text x="34" y="42" class="k">IDENTITY // PROFILE SPEC</text>
+<text x="34" y="80" class="hero">Thumula "Y45UK3" Kulajitha</text>
+<text x="34" y="110" class="muted">Esports operations × automation × development</text>
+
+<g transform="translate(34 140)"><text class="k">FOCUS</text><text y="24" class="v">Internal tools • AI workflows • Production systems</text></g>
+<g transform="translate(540 140)"><text class="k">LOCATION</text><text y="24" class="v">Sri Lanka</text></g>
+<g transform="translate(720 140)"><text class="k">MODE</text><circle cx="4" cy="22" r="5" fill="#E30118"><animate attributeName="opacity" values=".35;1;.35" dur="1.5s" repeatCount="indefinite"/></circle><text x="18" y="27" class="v">Building</text></g>
+</svg>
