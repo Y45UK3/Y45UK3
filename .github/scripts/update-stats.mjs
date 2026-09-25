@@ -115,7 +115,7 @@ function contributionsSvg(months) {
     <linearGradient id="barGradient" x1="0" y1="1" x2="0" y2="0">
       <stop offset="0" stop-color="#1E2B57"/>
       <stop offset="0.55" stop-color="#E30118"/>
-      <stop offset="1" stop-color="#FDD900"/>
+      <stop offset="1" stop-color="#E30118"/>
     </linearGradient>
     <style>
       .title{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#e6edf3}
@@ -159,7 +159,7 @@ function languagesSvg(entries) {
   const width = 450;
   const height = 300;
   const total = entries.reduce((sum, [, bytes]) => sum + bytes, 0) || 1;
-  const colors = ["#E30118", "#FDD900", "#4570C0", "#C0BFBF", "#EA1C2D", "#1E2B57", "#FFFFFF"];
+  const colors = ["#E30118", "#4570C0", "#FFFFFF", "#EA1C2D", "#6B8FD6", "#1E2B57", "#B7C5E5"];
   const cx = entries.length ? 120 : 225;
   const cy = 158;
   const r = 72;
