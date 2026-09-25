@@ -38,34 +38,11 @@ I work at the intersection of **esports operations and software** — turning re
 
 ## Current Focus
 
-<table cellpadding="16">
-<tr>
-<td width="52%" valign="top">
+<div align="center">
 
-### IGE Invoice Platform
+<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/current-focus.svg" width="100%" alt="Current development focus" />
 
-A production-focused invoice and operations tool built to simplify internal workflows.
-
-<br/>
-
-<a href="https://github.com/Y45UK3/IGE-INVOICE-GEN-v1.0.0">
-  <img src="https://img.shields.io/badge/View%20Repository-111827?style=for-the-badge&logo=github&logoColor=white" alt="View IGE Invoice Platform" />
-</a>
-
-</td>
-<td width="48%" valign="top">
-
-### What I'm exploring
-
-- AI-assisted development
-- Workflow automation
-- Internal operations tooling
-- Better developer + operations systems
-- Practical product engineering
-
-</td>
-</tr>
-</table>
+</div>
 
 ---
 
