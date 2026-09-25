@@ -38,7 +38,16 @@ jobs:
           git add .github/assets/contributions.svg .github/assets/languages.svg .github/assets/stats.svg
           if git diff --cached --quiet; then
             echo "No profile-stat changes to commit."
-            exit 0
+          else
+            git commit -m "chore: refresh profile stats"
+            git push
           fi
-          git commit -m "chore: refresh profile stats"
-          git push
+
+      - name: Notify Discord
+        if: success()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node .github/scripts/notify-discord.mjs
