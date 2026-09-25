@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6A5ACD,50:7C3AED,100:2563EB&height=190&section=header&text=Y45UK3%20%7C%20THUMULA%20KULAJITHA&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=16&descAlignY=58" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6A5ACD,50:7C3AED,100:2563EB&height=190&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=16&descAlignY=58" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
 
 <a href="https://github.com/Y45UK3">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=760&lines=Esports+Operations;Building+the+IGE+Invoice+Platform;Automation+%E2%80%A2+Operations+%E2%80%A2+Development;Building+with+AI;Turning+workflows+into+tools;Sri+Lanka+%F0%9F%87%B1%F0%9F%87%B0" alt="Animated introduction" />
@@ -94,7 +94,7 @@ A production-focused invoice and operations tool built to simplify internal work
 
 <div align="center">
 
-### Y45UK3 // THUMULA KULAJITHA
+### Thumula "Y45UK3" Kulajitha
 
 <sub>Operations mindset. Builder mentality.</sub>
 
