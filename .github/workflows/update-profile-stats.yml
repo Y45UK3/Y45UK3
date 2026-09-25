@@ -9,6 +9,7 @@ on:
       - main
     paths:
       - ".github/scripts/update-stats.mjs"
+      - ".github/scripts/notify-discord.mjs"
       - ".github/workflows/update-profile-stats.yml"
 
 permissions:
@@ -44,10 +45,11 @@ jobs:
           fi
 
       - name: Notify Discord
-        if: success()
+        if: always()
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           REPO: ${{ github.repository }}
           SHA: ${{ github.sha }}
           RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_STATUS: ${{ job.status }}
         run: node .github/scripts/notify-discord.mjs
