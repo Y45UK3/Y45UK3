@@ -136,6 +136,6 @@ if (!repos.length) throw new Error("No repositories available for activity detec
 const current = repos[0];
 const status = statusFrom(current.pushed_at);
 
-fs.writeFileSync(path.join(outDir, "tech-panel.svg"), techPanel(current, status));
-fs.writeFileSync(path.join(outDir, "current-focus.svg"), focusCard(repos));
+fs.writeFileSync(path.join(outDir, "tech-panel-v3.svg"), techPanel(current, status));
+fs.writeFileSync(path.join(outDir, "current-focus-v2.svg"), focusCard(repos));
 console.log("Activity profile refreshed:", current.full_name, status.label);
