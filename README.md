@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E2B57,55:1E2B57,100:E30118&height=190&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=16&descAlignY=58" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
 
 <a href="https://github.com/Y45UK3">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&duration=2800&pause=900&color=FDD900&center=true&vCenter=true&width=760&lines=Esports+Operations;Building+the+IGE+Invoice+Platform;Automation+%E2%80%A2+Operations+%E2%80%A2+Development;Building+with+AI;Turning+workflows+into+tools;Sri+Lanka+%F0%9F%87%B1%F0%9F%87%B0" alt="Animated introduction" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&duration=2800&pause=900&color=E30118&center=true&vCenter=true&width=760&lines=Esports+Operations;Building+the+IGE+Invoice+Platform;Automation+%E2%80%A2+Operations+%E2%80%A2+Development;Building+with+AI;Turning+workflows+into+tools;Sri+Lanka+%F0%9F%87%B1%F0%9F%87%B0" alt="Animated introduction" />
 </a>
 
 <p>
@@ -16,17 +16,23 @@
 
 ---
 
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/tech-panel.svg" width="100%" alt="Y45UK3 system profile" />
+
+</div>
+
 ## About Me
 
-I'm **Thumula Kulajitha**, better known online as **Y45UK3**.
+```text
+IDENTITY  : Thumula "Y45UK3" Kulajitha
+DOMAIN    : Esports Operations / Automation / Development
+FOCUS     : Internal tools • AI workflows • Production systems
+LOCATION  : Sri Lanka
+STATUS    : Building
+```
 
-I work across **esports operations, automation, and development** — building practical systems that make repetitive workflows cleaner, faster, and easier to manage.
-
-- 🎮 Working in **Esports Operations**
-- 🧾 Building and maintaining the **IGE Invoice Platform**
-- ⚙️ Interested in **automation, AI-assisted workflows, and internal tools**
-- 🛠️ I like turning real operational problems into software
-- 🇱🇰 Based in **Sri Lanka**
+I work at the intersection of **esports operations and software** — turning repetitive operational problems into practical tools, automations, and production workflows.
 
 ---
 
@@ -77,6 +83,18 @@ A production-focused invoice and operations tool built to simplify internal work
 </td>
 </tr>
 </table>
+
+</div>
+
+---
+
+## Discord Presence
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/DISCORD-PRESENCE%20MODULE%20READY-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord presence module ready" />
+
+<sub>Live online status will appear here once your Discord User ID is connected.</sub>
 
 </div>
 
