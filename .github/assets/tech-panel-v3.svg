@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="230" viewBox="0 0 900 230">
+<defs>
+<linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset=".55" stop-color="#0b1730"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
+<linearGradient id="line" x1="0" x2="1"><stop offset="0" stop-color="#E30118"/><stop offset=".55" stop-color="#4570C0"/><stop offset="1" stop-color="#E30118"/></linearGradient>
+<pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#22314f" stroke-width="1" opacity=".4"/></pattern>
+<filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<style>text{font-family:Arial,Helvetica,sans-serif}.eyebrow{font-size:11px;font-weight:700;fill:#8ea3c7;letter-spacing:1.3px}.headline{font-size:27px;font-weight:800;fill:#fff}.sub{font-size:13px;font-weight:600;fill:#9fb2d0}.label{font-size:10px;font-weight:700;fill:#8ea3c7;letter-spacing:.8px}.value{font-size:13px;font-weight:700;fill:#dbe7ff}</style>
+</defs>
+<rect width="900" height="230" rx="18" fill="url(#bg)" stroke="#2b3b5f"/><rect width="900" height="230" rx="18" fill="url(#grid)" opacity=".7"/>
+<rect x="0" y="0" width="900" height="4" rx="2" fill="url(#line)"><animate attributeName="opacity" values=".65;1;.65" dur="2.6s" repeatCount="indefinite"/></rect>
+<text x="38" y="40" class="eyebrow">PROFILE // ACTIVITY TELEMETRY</text>
+<text x="38" y="82" class="headline">Development Status</text>
+<text x="38" y="106" class="sub">Live snapshot of what I’m building and where I’m active.</text>
+<g transform="translate(38 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">PRIMARY DOMAIN</text><text x="16" y="46" class="value">ESPORTS OPERATIONS</text></g>
+<g transform="translate(240 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">BUILD MODE</text><text x="16" y="46" class="value">AUTOMATION / DEV</text></g>
+<g transform="translate(442 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">CURRENT SYSTEM</text><text x="16" y="46" class="value">IGE INVOICE PLATFORM</text></g>
+<g transform="translate(644 132)"><rect width="218" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">STATUS</text><circle cx="18" cy="45" r="5" fill="#E30118" filter="url(#glow)"><animate attributeName="opacity" values=".35;1;.35" dur="1.4s" repeatCount="indefinite"/></circle><text x="32" y="50" class="value">ACTIVE BUILD</text></g>
+<rect x="-220" y="211" width="220" height="2" fill="#4570C0" opacity=".9"><animate attributeName="x" from="-220" to="900" dur="4.2s" repeatCount="indefinite"/></rect>
+</svg>
