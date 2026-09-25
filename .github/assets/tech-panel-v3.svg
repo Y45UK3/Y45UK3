@@ -17,7 +17,7 @@
   <text x="38" y="106" class="sub">Live snapshot of what I’m building and where I’m active.</text>
   <g transform="translate(38 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">PRIMARY DOMAIN</text><text x="16" y="46" class="value">ESPORTS OPERATIONS</text></g>
   <g transform="translate(240 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">BUILD MODE</text><text x="16" y="46" class="value">AUTOMATION / DEV</text></g>
-  <g transform="translate(442 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">CURRENT SYSTEM</text><text x="16" y="46" class="value">IGE INVOICE PLATFORM</text></g>
-  <g transform="translate(644 132)"><rect width="218" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">STATUS</text><circle cx="18" cy="45" r="5" fill="#E30118" filter="url(#glow)"><animate attributeName="opacity" values=".35;1;.35" dur="1.4s" repeatCount="indefinite"/></circle><text x="32" y="50" class="value">ACTIVE BUILD</text></g>
+  <g transform="translate(442 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">CURRENT SYSTEM</text><text x="16" y="46" class="value">PRIVATE ACTIVITY UNAVAIL</text></g>
+  <g transform="translate(644 132)"><rect width="218" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">STATUS</text><circle cx="18" cy="45" r="5" fill="#E30118" filter="url(#glow)"></circle><text x="32" y="50" class="value">TOKEN REQUIRED</text></g>
   <rect x="-220" y="211" width="220" height="2" fill="#4570C0" opacity=".9"><animate attributeName="x" from="-220" to="900" dur="4.2s" repeatCount="indefinite"/></rect>
   </svg>

@@ -10,13 +10,13 @@
   </defs>
   <rect width="900" height="320" rx="16" fill="url(#bg)" stroke="#2b3b5f"/><rect width="900" height="320" rx="16" fill="url(#grid)"/><rect x="0" width="6" height="320" rx="3" fill="#E30118"/>
   <text x="38" y="44" class="eyebrow">CURRENT FOCUS // AUTO-DETECTED FROM GITHUB ACTIVITY</text>
-  <text x="38" y="98" class="title">IGE Invoice Platform</text>
+  <text x="38" y="98" class="title">Private Activity Unavailable</text>
   <text x="38" y="130" class="body">Most recently active development repository.</text>
-  <rect x="38" y="160" width="164" height="36" rx="18" fill="#E30118"/><text x="120" y="183" text-anchor="middle" class="pill">ACTIVE BUILD</text>
-  <text x="38" y="238" class="eyebrow">LAST PUSH</text><text x="38" y="265" class="repo">1m ago</text>
+  <rect x="38" y="160" width="164" height="36" rx="18" fill="#E30118"/><text x="120" y="183" text-anchor="middle" class="pill">QUIET MODE</text>
+  <text x="38" y="238" class="eyebrow">LAST PUSH</text><text x="38" y="265" class="repo">2362d ago</text>
   <text x="38" y="291" class="ago">Refresh cadence: every 2 hours</text>
   <line x1="458" y1="74" x2="458" y2="278" stroke="#263b63"/>
   <text x="500" y="82" class="eyebrow">RECENT SYSTEMS</text>
-  <g transform="translate(500 120)"><circle cx="0" cy="-4" r="4" fill="#E30118"/><text x="16" y="0" class="repo">IGE Invoice Platform</text><text x="340" y="0" text-anchor="end" class="ago">1m ago</text></g><g transform="translate(500 168)"><circle cx="0" cy="-4" r="4" fill="#4570C0"/><text x="16" y="0" class="repo">sturdy winner</text><text x="340" y="0" text-anchor="end" class="ago">2362d ago</text></g>
+  <g transform="translate(500 120)"><circle cx="0" cy="-4" r="4" fill="#E30118"/><text x="16" y="0" class="repo">Private Activity Unavailable</text><text x="340" y="0" text-anchor="end" class="ago">2362d ago</text></g><g transform="translate(500 168)"><circle cx="0" cy="-4" r="4" fill="#4570C0"/><text x="16" y="0" class="repo">sturdy winner</text><text x="340" y="0" text-anchor="end" class="ago">2362d ago</text></g>
   <text x="500" y="286" class="ago">Public activity only • PROFILE_TOKEN enables private repos</text>
   </svg>
