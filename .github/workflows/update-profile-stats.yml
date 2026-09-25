@@ -1,22 +1,26 @@
-name: Profile update notification
+name: Refresh profile telemetry
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "17 */2 * * *"
   push:
     branches:
       - main
     paths:
       - "README.md"
-      - ".github/assets/**"
+      - ".github/scripts/update-activity.mjs"
       - ".github/scripts/notify-discord.mjs"
       - ".github/workflows/update-profile-stats.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  notify:
+  refresh:
     runs-on: ubuntu-latest
+    env:
+      PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
     steps:
       - name: Checkout profile repository
         uses: actions/checkout@v4
@@ -25,6 +29,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      - name: Refresh current activity
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+        run: node .github/scripts/update-activity.mjs
+
+      - name: Commit refreshed telemetry
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/assets/tech-panel.svg .github/assets/current-focus.svg
+          if git diff --cached --quiet; then
+            echo "No telemetry changes."
+          else
+            git commit -m "chore: refresh profile telemetry [skip ci]"
+            git push
+          fi
 
       - name: Notify Discord
         if: always()
