@@ -9,8 +9,8 @@
 <text x="154" y="58" class="meta">DISCORD // LIVE PRESENCE</text>
 <text x="154" y="96" class="title">Y45UK3</text>
 <text x="154" y="125" class="user">@y45uk3</text>
-<text x="154" y="157" class="small">No public activity</text>
-<circle cx="700" cy="91" r="8" fill="#80848E"/><text x="720" y="98" class="user">Unknown</text>
-<text x="700" y="131" class="small">Status unavailable</text>
+<text x="154" y="157" class="small">Custom Status</text>
+<circle cx="700" cy="91" r="8" fill="#23A55A"/><text x="720" y="98" class="user">Online</text>
+<text x="700" y="131" class="small">Live Discord presence</text>
 <text x="700" y="157" class="small">ID 515551543941005313</text>
 </svg>
