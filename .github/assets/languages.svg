@@ -1,40 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="450" height="300" viewBox="0 0 450 300">
-<defs>
-  <linearGradient id="bg" x1="0" x2="1">
-    <stop offset="0" stop-color="#07111f"/>
-    <stop offset="1" stop-color="#111d3d"/>
-  </linearGradient>
-  <style>
-    text{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    .title{font-size:18px;font-weight:700;fill:#fff}
-    .meta{font-size:10px;font-weight:600;fill:#7890b7;letter-spacing:1px}
-    .name{font-size:12px;font-weight:650;fill:#dbe7ff}
-    .pct{font-size:11px;font-weight:700;fill:#9fb2d0}
-    .center{font-size:20px;font-weight:800;fill:#fff}
-    .sub{font-size:10px;font-weight:600;fill:#7890b7;letter-spacing:.8px}
-  </style>
-</defs>
-<rect width="450" height="300" rx="14" fill="url(#bg)" stroke="#2b3b5f"/>
-<rect x="0" y="0" width="5" height="300" rx="3" fill="#E30118"/>
-<text x="24" y="34" class="title">Top Languages</text>
-<text x="426" y="34" text-anchor="end" class="meta">PRIVATE + PUBLIC</text>
-
+<defs><linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
+<style>text{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.title{font-size:18px;font-weight:700;fill:#fff}.meta{font-size:10px;font-weight:600;fill:#7890b7;letter-spacing:1px}.name{font-size:12px;font-weight:650;fill:#dbe7ff}.pct{font-size:11px;font-weight:700;fill:#9fb2d0}.center{font-size:20px;font-weight:800;fill:#fff}.sub{font-size:10px;font-weight:600;fill:#7890b7;letter-spacing:.8px}</style></defs>
+<rect width="450" height="300" rx="14" fill="url(#bg)" stroke="#2b3b5f"/><rect x="0" y="0" width="5" height="300" rx="3" fill="#E30118"/>
+<text x="24" y="34" class="title">Top Languages</text><text x="426" y="34" text-anchor="end" class="meta">PRIVATE + PUBLIC</text>
 <g transform="translate(118 158) rotate(-90)">
-  <circle r="70" fill="none" stroke="#1b2a47" stroke-width="24"/>
-  <circle r="70" fill="none" stroke="#E30118" stroke-width="24" pathLength="100" stroke-dasharray="35.8 64.2" stroke-dashoffset="0"/>
-  <circle r="70" fill="none" stroke="#4570C0" stroke-width="24" pathLength="100" stroke-dasharray="34.3 65.7" stroke-dashoffset="-35.8"/>
-  <circle r="70" fill="none" stroke="#D7E0EF" stroke-width="24" pathLength="100" stroke-dasharray="17.6 82.4" stroke-dashoffset="-70.1"/>
-  <circle r="70" fill="none" stroke="#6B8FD6" stroke-width="24" pathLength="100" stroke-dasharray="9.1 90.9" stroke-dashoffset="-87.7"/>
-  <circle r="70" fill="none" stroke="#8FA7CC" stroke-width="24" pathLength="100" stroke-dasharray="3.3 96.7" stroke-dashoffset="-96.8"/>
+<circle r="70" fill="none" stroke="#1b2a47" stroke-width="24"/>
+<circle r="70" fill="none" stroke="#E30118" stroke-width="24" pathLength="100" stroke-dasharray="35.8 64.2"/>
+<circle r="70" fill="none" stroke="#4570C0" stroke-width="24" pathLength="100" stroke-dasharray="34.3 65.7" stroke-dashoffset="-35.8"/>
+<circle r="70" fill="none" stroke="#D7E0EF" stroke-width="24" pathLength="100" stroke-dasharray="17.6 82.4" stroke-dashoffset="-70.1"/>
+<circle r="70" fill="none" stroke="#6B8FD6" stroke-width="24" pathLength="100" stroke-dasharray="9.1 90.9" stroke-dashoffset="-87.7"/>
+<circle r="70" fill="none" stroke="#8FA7CC" stroke-width="24" pathLength="100" stroke-dasharray="3.3 96.7" stroke-dashoffset="-96.8"/>
 </g>
-<text x="118" y="154" text-anchor="middle" class="center">243.9 KB</text>
-<text x="118" y="174" text-anchor="middle" class="sub">INDEXED SOURCE</text>
-
+<text x="118" y="154" text-anchor="middle" class="center">243.9 KB</text><text x="118" y="174" text-anchor="middle" class="sub">INDEXED SOURCE</text>
 <rect x="230" y="82" width="10" height="10" rx="2" fill="#E30118"/><text x="250" y="91" class="name">TypeScript</text><text x="414" y="91" text-anchor="end" class="pct">35.8%</text>
 <rect x="230" y="113" width="10" height="10" rx="2" fill="#4570C0"/><text x="250" y="122" class="name">JavaScript</text><text x="414" y="122" text-anchor="end" class="pct">34.3%</text>
 <rect x="230" y="144" width="10" height="10" rx="2" fill="#D7E0EF"/><text x="250" y="153" class="name">CSS</text><text x="414" y="153" text-anchor="end" class="pct">17.6%</text>
 <rect x="230" y="175" width="10" height="10" rx="2" fill="#6B8FD6"/><text x="250" y="184" class="name">HTML</text><text x="414" y="184" text-anchor="end" class="pct">9.1%</text>
 <rect x="230" y="206" width="10" height="10" rx="2" fill="#8FA7CC"/><text x="250" y="215" class="name">Python</text><text x="414" y="215" text-anchor="end" class="pct">3.3%</text>
-
 <text x="24" y="273" class="meta">SNAPSHOT // CONNECTED REPOSITORIES</text>
 </svg>
