@@ -215,3 +215,5 @@ fs.writeFileSync(path.join(outDir, "contributions.svg"), contributionsSvg(contri
 fs.writeFileSync(path.join(outDir, "languages.svg"), languagesSvg(languages));
 
 console.log("Profile stats generated for", username);
+
+// Profile stats are refreshed automatically by GitHub Actions.
