@@ -73,7 +73,7 @@ A production-focused invoice and operations tool built to simplify internal work
   <img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/languages.svg" width="100%" alt="Top languages" />
 </td>
 <td align="center" width="50%">
-  <img src="https://github-readme-stats.vercel.app/api?username=Y45UK3&show_icons=true&hide_border=true&bg_color=0d1117&title_color=8B5CF6&icon_color=60A5FA&text_color=C9D1D9&ring_color=8B5CF6" width="100%" alt="GitHub stats" />
+  <img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/stats.svg" width="100%" alt="GitHub stats" />
 </td>
 </tr>
 </table>
