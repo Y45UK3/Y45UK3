@@ -167,13 +167,13 @@ function languagesSvg(entries) {
   const circumference = 2 * Math.PI * r;
   let offset = 0;
 
-  const arcs = entries.map(([name, bytes], i) => {
+  const arcs = entries.length ? entries.map(([name, bytes], i) => {
     const fraction = bytes / total;
     const dash = fraction * circumference;
     const el = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${colors[i]}" stroke-width="${stroke}" stroke-dasharray="${dash.toFixed(2)} ${(circumference - dash).toFixed(2)}" stroke-dashoffset="${(-offset).toFixed(2)}" transform="rotate(-90 ${cx} ${cy})"/>`;
     offset += dash;
     return el;
-  }).join("");
+  }).join("") : "";
 
   const legend = entries.map(([name, bytes], i) => {
     const pct = ((bytes / total) * 100).toFixed(1);
@@ -200,11 +200,12 @@ function languagesSvg(entries) {
   </defs>
   <rect width="100%" height="100%" rx="14" fill="url(#bg2)" stroke="#30363d"/>
   <text x="24" y="34" class="title">Top Languages</text>
-  <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#21262d" stroke-width="${stroke}"/>
+  <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${entries.length ? "#21262d" : "#263b63"}" stroke-width="${stroke}"/>
   ${arcs}
-  <text x="${cx}" y="${cy - 3}" text-anchor="middle" class="center1">${entries.length ? entries.length : "—"}</text>
-  <text x="${cx}" y="${cy + 15}" text-anchor="middle" class="center2">${entries.length ? "languages" : "no public language data"}</text>
+  <text x="${cx}" y="${cy - 3}" text-anchor="middle" class="center1">${entries.length ? entries.length : "PRIVATE"}</text>
+  <text x="${cx}" y="${cy + 15}" text-anchor="middle" class="center2">${entries.length ? "languages" : "LANGUAGE DATA LOCKED"}</text>
   ${legend}
+  ${entries.length ? "" : `<text x="225" y="264" text-anchor="middle" class="center2">Connect read-only repo access to populate this module</text>`}
 </svg>`;
 }
 
