@@ -30,17 +30,10 @@ async function listRepos() {
     .filter(r => !r.archived && !r.fork && r.name !== owner)
     .sort((a,b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
-  // Without the private-repo token, don't let a very old public repo become the
-  // "current system". Keep the known active production project as the fallback.
+  // Without PROFILE_TOKEN we cannot see private repo activity. Never fabricate
+  // a fresh timestamp, because that would falsely show ACTIVE BUILD.
   if (!process.env.PROFILE_TOKEN) {
-    const recentPublic = filtered.find(r => (Date.now() - new Date(r.pushed_at).getTime()) < 30 * 86400000);
-    if (recentPublic) return [recentPublic, ...filtered.filter(r => r.id !== recentPublic.id)];
-    return [{
-      name: "IGE-INVOICE-GEN-v1.0.0",
-      full_name: owner + "/IGE-INVOICE-GEN-v1.0.0",
-      pushed_at: new Date().toISOString(),
-      html_url: "https://github.com/Y45UK3/IGE-INVOICE-GEN-v1.0.0"
-    }, ...filtered];
+    return filtered;
   }
   return filtered;
 }
@@ -51,6 +44,7 @@ function prettyRepo(name) {
     "FlowTrack-Web": "FlowTrack Web",
     "FlowTrack": "FlowTrack",
     "Discord-Bot": "Discord Bot",
+    "PRIVATE-ACTIVITY": "Private Activity Unavailable",
   };
   return aliases[name] || name.replaceAll("-", " ");
 }
@@ -133,9 +127,22 @@ function focusCard(repos) {
 
 const repos = await listRepos();
 if (!repos.length) throw new Error("No repositories available for activity detection.");
-const current = repos[0];
-const status = statusFrom(current.pushed_at);
+
+let current = repos[0];
+let status = statusFrom(current.pushed_at);
+
+if (!process.env.PROFILE_TOKEN) {
+  const newestAgeDays = (Date.now() - new Date(current.pushed_at).getTime()) / 86400000;
+  if (newestAgeDays > 30) {
+    current = {
+      name: "PRIVATE-ACTIVITY",
+      full_name: owner + "/private-activity",
+      pushed_at: current.pushed_at
+    };
+    status = { label: "TOKEN REQUIRED", pulse: false };
+  }
+}
 
 fs.writeFileSync(path.join(outDir, "tech-panel-v3.svg"), techPanel(current, status));
-fs.writeFileSync(path.join(outDir, "current-focus-v2.svg"), focusCard(repos));
+fs.writeFileSync(path.join(outDir, "current-focus-v2.svg"), focusCard([current, ...repos.filter(r => r.name !== current.name)]));
 console.log("Activity profile refreshed:", current.full_name, status.label);
