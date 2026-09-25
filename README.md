@@ -2,9 +2,9 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E2B57,55:1E2B57,100:E30118&height=190&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=16&descAlignY=58" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
 
-<p>
-  <strong>Esports Operations</strong> &nbsp;•&nbsp; Automation &nbsp;•&nbsp; Development &nbsp;•&nbsp; AI Workflows
-</p>
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=18&duration=2600&pause=850&color=FFFFFF&center=true&vCenter=true&width=780&lines=Esports+Operations+%E2%80%A2+Automation+%E2%80%A2+Development+%E2%80%A2+AI+Workflows;Building+production+tools+and+internal+systems;Turning+operations+problems+into+software;Currently+building+the+IGE+Invoice+Platform" alt="Animated profile tagline" />
+</div>
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=Y45UK3&style=for-the-badge&color=E30118&label=PROFILE+VIEWS" alt="Profile views" />
@@ -38,21 +38,25 @@ I work at the intersection of **esports operations and software** — turning re
 
 ## Current Focus
 
-<table>
+<table cellpadding="16">
 <tr>
-<td width="50%" valign="top">
+<td width="52%" valign="top">
 
 ### IGE Invoice Platform
+
 A production-focused invoice and operations tool built to simplify internal workflows.
 
+<br/>
+
 <a href="https://github.com/Y45UK3/IGE-INVOICE-GEN-v1.0.0">
-  <img src="https://img.shields.io/badge/View%20Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="View IGE Invoice Platform" />
+  <img src="https://img.shields.io/badge/View%20Repository-111827?style=for-the-badge&logo=github&logoColor=white" alt="View IGE Invoice Platform" />
 </a>
 
 </td>
-<td width="50%" valign="top">
+<td width="48%" valign="top">
 
 ### What I'm exploring
+
 - AI-assisted development
 - Workflow automation
 - Internal operations tooling
@@ -90,18 +94,19 @@ A production-focused invoice and operations tool built to simplify internal work
 
 ## Discord Presence
 
-<table>
-<tr>
-<td width="96" align="center">
-  <img src="https://github.com/Y45UK3.png?size=160" width="72" height="72" alt="Y45UK3" />
-</td>
-<td valign="middle">
-  <strong>Y45UK3</strong><br/>
-  Discord: <code>@y45uk3</code><br/>
-  <sub>Live online/offline presence will be enabled once the numeric Discord User ID is connected.</sub>
-</td>
-</tr>
-</table>
+<div align="center">
+
+<a href="https://discord.com/users/515551543941005313">
+  <img src="https://lanyard.cnrad.dev/api/515551543941005313?bg=07111f&borderRadius=14px&idleMessage=Building%20something...&hideDiscrim=true" width="520" alt="Y45UK3 Discord presence" />
+</a>
+
+<br/><br/>
+
+<a href="https://discord.com/users/515551543941005313">
+  <img src="https://img.shields.io/badge/ADD%20Y45UK3%20ON%20DISCORD-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Add Y45UK3 on Discord" />
+</a>
+
+</div>
 
 ---
 
