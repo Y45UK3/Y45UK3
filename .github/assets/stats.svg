@@ -1,50 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="450" height="300" viewBox="0 0 450 300">
-<defs>
-  <linearGradient id="bg" x1="0" x2="1">
-    <stop offset="0" stop-color="#07111f"/>
-    <stop offset="1" stop-color="#111d3d"/>
-  </linearGradient>
-  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-    <path d="M32 0H0V32" fill="none" stroke="#22314f" stroke-width="1" opacity=".3"/>
-  </pattern>
-  <style>
-    text{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    .title{font-size:18px;font-weight:700;fill:#fff}
-    .meta{font-size:10px;font-weight:600;fill:#7890b7;letter-spacing:1px}
-    .value{font-size:27px;font-weight:800;fill:#fff}
-    .label{font-size:10px;font-weight:650;fill:#8ea3c7;letter-spacing:.8px}
-    .focus{font-size:13px;font-weight:700;fill:#dbe7ff}
-  </style>
-</defs>
-<rect width="450" height="300" rx="14" fill="url(#bg)" stroke="#2b3b5f"/>
-<rect width="450" height="300" rx="14" fill="url(#grid)"/>
-<rect x="0" y="0" width="5" height="300" rx="3" fill="#4570C0"/>
-<text x="24" y="34" class="title">GitHub Stats</text>
-<text x="426" y="34" text-anchor="end" class="meta">ACCOUNT // SNAPSHOT</text>
-
-<g transform="translate(26 72)">
-  <rect width="118" height="76" rx="9" fill="#0b1327" stroke="#263b63"/>
-  <text x="14" y="35" class="value">6</text>
-  <text x="14" y="57" class="label">REPOSITORIES</text>
-</g>
-<g transform="translate(166 72)">
-  <rect width="118" height="76" rx="9" fill="#0b1327" stroke="#263b63"/>
-  <text x="14" y="35" class="value">4</text>
-  <text x="14" y="57" class="label">PRIVATE</text>
-</g>
-<g transform="translate(306 72)">
-  <rect width="118" height="76" rx="9" fill="#0b1327" stroke="#263b63"/>
-  <text x="14" y="35" class="value">2</text>
-  <text x="14" y="57" class="label">PUBLIC</text>
-</g>
-
-<text x="26" y="186" class="meta">PRIMARY STACK</text>
-<text x="26" y="211" class="focus">TypeScript • JavaScript • React • CSS • Python</text>
-
-<text x="26" y="246" class="meta">CURRENT BUILD</text>
-<text x="26" y="270" class="focus">IGE Invoice Platform</text>
-
-<circle cx="414" cy="264" r="5" fill="#E30118">
-  <animate attributeName="opacity" values=".35;1;.35" dur="1.5s" repeatCount="indefinite"/>
-</circle>
+<defs><linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#22314f" stroke-width="1" opacity=".3"/></pattern>
+<style>text{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.title{font-size:18px;font-weight:700;fill:#fff}.meta{font-size:10px;font-weight:600;fill:#7890b7;letter-spacing:1px}.value{font-size:27px;font-weight:800;fill:#fff}.label{font-size:10px;font-weight:650;fill:#8ea3c7;letter-spacing:.8px}.focus{font-size:13px;font-weight:700;fill:#dbe7ff}</style></defs>
+<rect width="450" height="300" rx="14" fill="url(#bg)" stroke="#2b3b5f"/><rect width="450" height="300" rx="14" fill="url(#grid)"/><rect x="0" y="0" width="5" height="300" rx="3" fill="#4570C0"/>
+<text x="24" y="34" class="title">GitHub Stats</text><text x="426" y="34" text-anchor="end" class="meta">ACCOUNT // SNAPSHOT</text>
+<g transform="translate(26 72)"><rect width="118" height="76" rx="9" fill="#0b1327" stroke="#263b63"/><text x="14" y="35" class="value">6</text><text x="14" y="57" class="label">REPOSITORIES</text></g>
+<g transform="translate(166 72)"><rect width="118" height="76" rx="9" fill="#0b1327" stroke="#263b63"/><text x="14" y="35" class="value">4</text><text x="14" y="57" class="label">PRIVATE</text></g>
+<g transform="translate(306 72)"><rect width="118" height="76" rx="9" fill="#0b1327" stroke="#263b63"/><text x="14" y="35" class="value">2</text><text x="14" y="57" class="label">PUBLIC</text></g>
+<text x="26" y="186" class="meta">PRIMARY STACK</text><text x="26" y="211" class="focus">TypeScript • JavaScript • React • CSS • Python</text>
+<text x="26" y="246" class="meta">CURRENT BUILD</text><text x="26" y="270" class="focus">IGE Invoice Platform</text>
+<circle cx="414" cy="264" r="5" fill="#E30118"><animate attributeName="opacity" values=".35;1;.35" dur="1.5s" repeatCount="indefinite"/></circle>
 </svg>
