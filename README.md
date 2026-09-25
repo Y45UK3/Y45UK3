@@ -2,9 +2,9 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E2B57,55:1E2B57,100:E30118&height=190&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=42&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=16&descAlignY=58" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
 
-<a href="https://github.com/Y45UK3">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&duration=2800&pause=900&color=E30118&center=true&vCenter=true&width=760&lines=Esports+Operations;Building+the+IGE+Invoice+Platform;Automation+%E2%80%A2+Operations+%E2%80%A2+Development;Building+with+AI;Turning+workflows+into+tools;Sri+Lanka+%F0%9F%87%B1%F0%9F%87%B0" alt="Animated introduction" />
-</a>
+<p>
+  <strong>Esports Operations</strong> &nbsp;•&nbsp; Automation &nbsp;•&nbsp; Development &nbsp;•&nbsp; AI Workflows
+</p>
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=Y45UK3&style=for-the-badge&color=E30118&label=PROFILE+VIEWS" alt="Profile views" />
@@ -90,13 +90,18 @@ A production-focused invoice and operations tool built to simplify internal work
 
 ## Discord Presence
 
-<div align="center">
-
-<img src="https://img.shields.io/badge/DISCORD-PRESENCE%20MODULE%20READY-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord presence module ready" />
-
-<sub>Live online status will appear here once your Discord User ID is connected.</sub>
-
-</div>
+<table>
+<tr>
+<td width="96" align="center">
+  <img src="https://github.com/Y45UK3.png?size=160" width="72" height="72" alt="Y45UK3" />
+</td>
+<td valign="middle">
+  <strong>Y45UK3</strong><br/>
+  Discord: <code>@y45uk3</code><br/>
+  <sub>Live online/offline presence will be enabled once the numeric Discord User ID is connected.</sub>
+</td>
+</tr>
+</table>
 
 ---
 
