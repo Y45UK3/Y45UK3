@@ -1,18 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
-  <defs>
-    <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
-    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#22314f" stroke-width="1" opacity=".28"/></pattern>
-    <style>text{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.eyebrow{font-size:10px;font-weight:700;fill:#7890b7;letter-spacing:1.3px}.title{font-size:28px;font-weight:800;fill:#fff}.body{font-size:13px;font-weight:550;fill:#aabbd6}.repo{font-size:14px;font-weight:700;fill:#dbe7ff}.ago{font-size:11px;font-weight:650;fill:#7890b7}.pill{font-size:11px;font-weight:750;fill:#fff;letter-spacing:.8px}</style>
-  </defs>
-  <rect width="900" height="300" rx="16" fill="url(#bg)" stroke="#2b3b5f"/><rect width="900" height="300" rx="16" fill="url(#grid)"/>
-  <rect x="0" y="0" width="6" height="300" rx="3" fill="#E30118"/>
-  <text x="34" y="42" class="eyebrow">CURRENT FOCUS // AUTO-DETECTED FROM GITHUB ACTIVITY</text>
-  <text x="34" y="91" class="title">sturdy winner</text>
-  <text x="34" y="120" class="body">Most recently pushed repository on your GitHub account.</text>
-  <rect x="34" y="151" width="160" height="34" rx="17" fill="#E30118"/><text x="114" y="173" text-anchor="middle" class="pill">QUIET MODE</text>
-  <text x="34" y="218" class="eyebrow">LAST PUSH</text><text x="34" y="244" class="repo">2362d ago</text>
-  <line x1="435" y1="72" x2="435" y2="248" stroke="#263b63"/>
-  <text x="478" y="74" class="eyebrow">RECENT SYSTEMS</text>
-  <g transform="translate(478 118)"><circle cx="0" cy="-4" r="4" fill="#E30118"/><text x="16" y="0" class="repo">sturdy winner</text><text x="365" y="0" text-anchor="end" class="ago">2362d ago</text></g>
-  <text x="478" y="265" class="eyebrow">REFRESHES EVERY 2 HOURS</text>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
+  <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#22314f" stroke-width="1" opacity=".25"/></pattern>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif}
+    .eyebrow{font-size:10px;font-weight:700;fill:#7890b7;letter-spacing:1.2px}.title{font-size:30px;font-weight:800;fill:#fff}
+    .body{font-size:14px;font-weight:500;fill:#aabbd6}.repo{font-size:14px;font-weight:700;fill:#dbe7ff}.ago{font-size:11px;font-weight:650;fill:#7890b7}.pill{font-size:11px;font-weight:800;fill:#fff;letter-spacing:.7px}
+  </style>
+</defs>
+<rect width="900" height="320" rx="16" fill="url(#bg)" stroke="#2b3b5f"/><rect width="900" height="320" rx="16" fill="url(#grid)"/><rect x="0" width="6" height="320" rx="3" fill="#E30118"/>
+<text x="38" y="44" class="eyebrow">CURRENT FOCUS // GITHUB ACTIVITY</text>
+<text x="38" y="98" class="title">IGE Invoice Platform</text>
+<text x="38" y="130" class="body">Production invoice and operations tooling.</text>
+<rect x="38" y="160" width="156" height="36" rx="18" fill="#E30118"/><text x="116" y="183" text-anchor="middle" class="pill">ACTIVE BUILD</text>
+<text x="38" y="238" class="eyebrow">AUTO-DETECTION</text><text x="38" y="265" class="repo">Most recent private/public repository push</text>
+<text x="38" y="289" class="ago">Refresh cadence: every 2 hours</text>
+
+<line x1="450" y1="74" x2="450" y2="276" stroke="#263b63"/>
+<text x="492" y="82" class="eyebrow">WHAT I'M EXPLORING</text>
+<text x="492" y="124" class="repo">AI-assisted development</text>
+<text x="492" y="158" class="repo">Workflow automation</text>
+<text x="492" y="192" class="repo">Internal operations tooling</text>
+<text x="492" y="226" class="repo">Developer + operations systems</text>
+<text x="492" y="260" class="repo">Practical product engineering</text>
+</svg>
