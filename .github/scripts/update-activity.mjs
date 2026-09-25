@@ -146,3 +146,5 @@ if (!process.env.PROFILE_TOKEN) {
 fs.writeFileSync(path.join(outDir, "tech-panel-v3.svg"), techPanel(current, status));
 fs.writeFileSync(path.join(outDir, "current-focus-v2.svg"), focusCard([current, ...repos.filter(r => r.name !== current.name)]));
 console.log("Activity profile refreshed:", current.full_name, status.label);
+
+// telemetry-refresh-trigger: apply corrected private-activity logic
