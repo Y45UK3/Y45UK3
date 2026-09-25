@@ -1,22 +1,21 @@
-name: Update profile stats
+name: Profile update notification
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "23 0 * * *"
   push:
     branches:
       - main
     paths:
-      - ".github/scripts/update-stats.mjs"
+      - "README.md"
+      - ".github/assets/**"
       - ".github/scripts/notify-discord.mjs"
       - ".github/workflows/update-profile-stats.yml"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  update:
+  notify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout profile repository
@@ -26,23 +25,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
-      - name: Generate profile statistics
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node .github/scripts/update-stats.mjs
-
-      - name: Commit generated assets
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/assets/contributions.svg .github/assets/languages.svg .github/assets/stats.svg
-          if git diff --cached --quiet; then
-            echo "No profile-stat changes to commit."
-          else
-            git commit -m "chore: refresh profile stats"
-            git push
-          fi
 
       - name: Notify Discord
         if: always()
