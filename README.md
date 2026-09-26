@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E2B57,55:1E2B57,100:E30118&height=245&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=40&fontColor=ffffff&fontAlignY=34&animation=fadeIn&desc=Operations%20%E2%80%A2%20Esports%20%E2%80%A2%20Development&descSize=15&descAlignY=52" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E2B57,55:1E2B57,100:E30118&height=245&section=header&text=Thumula%20%22Y45UK3%22%20Kulajitha&fontSize=40&fontColor=ffffff&fontAlignY=34&animation=fadeIn&desc=Esports%20%E2%80%A2%20Networking%20%E2%80%A2%20Development&descSize=15&descAlignY=52" width="100%" alt="Y45UK3 | Thumula Kulajitha" />
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/tagline-v2.svg" width="100%" alt="Animated profile tagline" />
+  <img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/tagline-v3.svg" width="100%" alt="Animated profile tagline" />
 </div>
 
 <p>
@@ -18,7 +18,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/tech-panel-v3.svg" width="100%" alt="Y45UK3 system profile" />
+<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/tech-panel-v4.svg" width="100%" alt="Y45UK3 system profile" />
 
 </div>
 
@@ -26,11 +26,11 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/about-card-v2.svg" width="100%" alt="About Thumula Y45UK3 Kulajitha" />
+<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/about-card-v3.svg" width="100%" alt="About Thumula Y45UK3 Kulajitha" />
 
 </div>
 
-I work at the intersection of **esports operations and software** — turning repetitive operational problems into practical tools, automations, and production workflows.
+I work at the intersection of **esports operations, networking, and software** — turning operational and technical problems into practical tools, automations, infrastructure, and production workflows.
 
 ---
 
@@ -38,7 +38,7 @@ I work at the intersection of **esports operations and software** — turning re
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/current-focus-v2.svg" width="100%" alt="Current development focus" />
+<img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/current-focus-v3.svg" width="100%" alt="Current development focus" />
 
 </div>
 
@@ -67,18 +67,12 @@ I work at the intersection of **esports operations and software** — turning re
 
 ---
 
-## Discord Presence
+## Discord
 
 <div align="center">
 
 <a href="https://discord.com/users/515551543941005313">
-  <img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/discord-presence-v2.svg" width="100%" alt="Y45UK3 Discord presence" />
-</a>
-
-<br/>
-
-<a href="https://discord.com/users/515551543941005313">
-  <img src="https://img.shields.io/badge/OPEN%20DISCORD%20PROFILE-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Open Y45UK3 Discord profile" />
+  <img src="https://raw.githubusercontent.com/Y45UK3/Y45UK3/main/.github/assets/discord-card-v3.svg" width="100%" alt="Y45UK3 on Discord" />
 </a>
 
 </div>
