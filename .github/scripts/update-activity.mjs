@@ -94,38 +94,38 @@ function techPanel(repo, status, limited) {
 
 function focusCard(repos, limited) {
   if (limited) {
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280">
 <defs>
   <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
   <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#22314f" stroke-width="1" opacity=".25"/></pattern>
   <style>
     text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
     .eyebrow{font-size:10px;font-weight:700;fill:#7890b7;letter-spacing:1.2px}
-    .title{font-size:28px;font-weight:800;fill:#fff}
-    .body{font-size:14px;font-weight:500;fill:#aabbd6}
+    .title{font-size:27px;font-weight:800;fill:#fff}
+    .body{font-size:13px;font-weight:500;fill:#aabbd6}
     .item{font-size:14px;font-weight:700;fill:#dbe7ff}
     .small{font-size:11px;font-weight:600;fill:#7890b7}
     .pill{font-size:11px;font-weight:800;fill:#fff;letter-spacing:.7px}
   </style>
 </defs>
-<rect width="900" height="300" rx="16" fill="url(#bg)" stroke="#2b3b5f"/>
-<rect width="900" height="300" rx="16" fill="url(#grid)"/>
-<rect x="0" width="6" height="300" rx="3" fill="#E30118"/>
-<text x="38" y="44" class="eyebrow">CURRENT FOCUS // DEVELOPMENT ACTIVITY</text>
-<text x="38" y="94" class="title">Private work is not shown here</text>
-<text x="38" y="126" class="body">Only public repository activity is visible in this profile view.</text>
-<rect x="38" y="154" width="154" height="36" rx="18" fill="#1E2B57" stroke="#4570C0"/>
-<text x="115" y="177" text-anchor="middle" class="pill">LIMITED VIEW</text>
-<text x="38" y="226" class="eyebrow">REFRESH</text>
-<text x="38" y="254" class="item">Checks automatically every 2 hours</text>
-
-<line x1="455" y1="72" x2="455" y2="260" stroke="#263b63"/>
-<text x="500" y="82" class="eyebrow">WHAT I'M EXPLORING</text>
-<text x="500" y="124" class="item">AI-assisted development</text>
-<text x="500" y="158" class="item">Networking & infrastructure</text>
-<text x="500" y="192" class="item">Workflow automation</text>
-<text x="500" y="226" class="item">Internal operations tooling</text>
-<text x="500" y="260" class="item">Practical product engineering</text>
+<rect width="900" height="280" rx="16" fill="url(#bg)" stroke="#2b3b5f"/>
+<rect width="900" height="280" rx="16" fill="url(#grid)"/>
+<rect x="0" width="6" height="280" rx="3" fill="#E30118"/>
+<text x="38" y="42" class="eyebrow">CURRENT FOCUS // DEVELOPMENT ACTIVITY</text>
+<text x="38" y="88" class="title">Private activity is hidden</text>
+<text x="38" y="116" class="body">Public GitHub activity is visible.</text>
+<text x="38" y="136" class="body">Private project activity is not displayed.</text>
+<rect x="38" y="156" width="144" height="34" rx="17" fill="#1E2B57" stroke="#4570C0"/>
+<text x="110" y="178" text-anchor="middle" class="pill">LIMITED VIEW</text>
+<text x="38" y="222" class="eyebrow">REFRESH</text>
+<text x="38" y="248" class="item">Automatic • Every 2 hours</text>
+<line x1="455" y1="66" x2="455" y2="246" stroke="#263b63"/>
+<text x="500" y="76" class="eyebrow">AREAS OF FOCUS</text>
+<text x="500" y="116" class="item">AI-assisted development</text>
+<text x="500" y="150" class="item">Networking &amp; infrastructure</text>
+<text x="500" y="184" class="item">Workflow automation</text>
+<text x="500" y="218" class="item">Internal operations tooling</text>
+<text x="500" y="252" class="item">Practical product engineering</text>
 </svg>`;
   }
 
@@ -168,5 +168,5 @@ const current = repos[0];
 const status = statusFrom(current.pushed_at);
 
 fs.writeFileSync(path.join(outDir, "tech-panel-v4.svg"), techPanel(current, status, limited));
-fs.writeFileSync(path.join(outDir, "current-focus-v3.svg"), focusCard(repos, limited));
+fs.writeFileSync(path.join(outDir, "current-focus-v4.svg"), focusCard(repos, limited));
 console.log("Activity profile refreshed:", limited ? "limited public view" : current.full_name, limited ? "LIMITED VISIBILITY" : status.label);
