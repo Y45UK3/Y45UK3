@@ -10,7 +10,6 @@ on:
     paths:
       - "README.md"
       - ".github/scripts/update-activity.mjs"
-      - ".github/scripts/update-discord.mjs"
       - ".github/scripts/notify-discord.mjs"
       - ".github/workflows/update-profile-stats.yml"
 
@@ -37,15 +36,12 @@ jobs:
           PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
         run: node .github/scripts/update-activity.mjs
 
-      - name: Refresh Discord presence
-        run: node .github/scripts/update-discord.mjs
-
       - name: Commit refreshed telemetry
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/assets/tech-panel-v3.svg .github/assets/current-focus-v2.svg .github/assets/discord-presence-v2.svg
+          git add .github/assets/tech-panel-v4.svg .github/assets/current-focus-v3.svg
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No telemetry changes."
