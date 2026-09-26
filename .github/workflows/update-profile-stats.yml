@@ -41,7 +41,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/assets/tech-panel-v4.svg .github/assets/current-focus-v3.svg
+          git add .github/assets/tech-panel-v4.svg .github/assets/current-focus-v4.svg
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No telemetry changes."
