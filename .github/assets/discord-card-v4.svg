@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="96" viewBox="0 0 900 96">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    .meta{font-size:10px;font-weight:700;fill:#8ea3c7;letter-spacing:1px}
+    .name{font-size:21px;font-weight:800;fill:#fff}
+    .handle{font-size:13px;font-weight:650;fill:#b8c7df}
+    .cta{font-size:13px;font-weight:750;fill:#fff}
+  </style>
+</defs>
+<rect width="900" height="96" rx="14" fill="url(#bg)" stroke="#2b3b5f"/>
+<rect x="0" width="5" height="96" rx="3" fill="#5865F2"/>
+<circle cx="52" cy="48" r="25" fill="#5865F2"/>
+<text x="52" y="55" text-anchor="middle" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800">D</text>
+<text x="94" y="30" class="meta">DISCORD</text>
+<text x="94" y="55" class="name">Y45UK3</text>
+<text x="94" y="77" class="handle">@y45uk3</text>
+<rect x="671" y="25" width="185" height="46" rx="23" fill="#5865F2"/>
+<text x="763.5" y="53" text-anchor="middle" class="cta">OPEN PROFILE</text>
+</svg>
