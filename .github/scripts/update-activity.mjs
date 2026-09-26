@@ -26,16 +26,9 @@ async function listRepos() {
     ? "https://api.github.com/user/repos?visibility=all&affiliation=owner&sort=pushed&per_page=100"
     : "https://api.github.com/users/" + owner + "/repos?sort=pushed&per_page=100";
   const repos = await gh(url);
-  const filtered = repos
+  return repos
     .filter(r => !r.archived && !r.fork && r.name !== owner)
     .sort((a,b) => new Date(b.pushed_at) - new Date(a.pushed_at));
-
-  // Without PROFILE_TOKEN we cannot see private repo activity. Never fabricate
-  // a fresh timestamp, because that would falsely show ACTIVE BUILD.
-  if (!process.env.PROFILE_TOKEN) {
-    return filtered;
-  }
-  return filtered;
 }
 
 function prettyRepo(name) {
@@ -44,7 +37,6 @@ function prettyRepo(name) {
     "FlowTrack-Web": "FlowTrack Web",
     "FlowTrack": "FlowTrack",
     "Discord-Bot": "Discord Bot",
-    "PRIVATE-ACTIVITY": "Private Activity Unavailable",
   };
   return aliases[name] || name.replaceAll("-", " ");
 }
@@ -62,11 +54,19 @@ function ago(date) {
   if (mins < 60) return mins + "m ago";
   const hrs = Math.floor(mins / 60);
   if (hrs < 24) return hrs + "h ago";
-  return Math.floor(hrs / 24) + "d ago";
+  const days = Math.floor(hrs / 24);
+  if (days < 30) return days + "d ago";
+  return Math.floor(days / 30) + "mo ago";
 }
 
-function techPanel(repo, status) {
-  const current = esc(prettyRepo(repo.name).toUpperCase());
+function techPanel(repo, status, limited) {
+  const current = esc(prettyRepo(repo?.name || "").toUpperCase());
+  const activityView = limited ? "PUBLIC ONLY" : "PRIVATE + PUBLIC";
+  const systemValue = limited ? activityView : current.slice(0,24);
+  const systemLabel = limited ? "ACTIVITY VIEW" : "CURRENT SYSTEM";
+  const statusLabel = limited ? "LIMITED VISIBILITY" : status.label;
+  const statusColor = limited ? "#8ea3c7" : "#E30118";
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="230" viewBox="0 0 900 230">
   <defs>
     <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset=".55" stop-color="#0b1730"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
@@ -74,7 +74,7 @@ function techPanel(repo, status) {
     <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#22314f" stroke-width="1" opacity=".4"/></pattern>
     <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <style>
-      text{font-family:Arial,Helvetica,sans-serif}
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
       .eyebrow{font-size:11px;font-weight:700;fill:#8ea3c7;letter-spacing:1.3px}.headline{font-size:27px;font-weight:800;fill:#fff}.sub{font-size:13px;font-weight:600;fill:#9fb2d0}
       .label{font-size:10px;font-weight:700;fill:#8ea3c7;letter-spacing:.8px}.value{font-size:13px;font-weight:700;fill:#dbe7ff}
     </style>
@@ -83,68 +83,90 @@ function techPanel(repo, status) {
   <rect x="0" y="0" width="900" height="4" rx="2" fill="url(#line)"><animate attributeName="opacity" values=".65;1;.65" dur="2.6s" repeatCount="indefinite"/></rect>
   <text x="38" y="40" class="eyebrow">PROFILE // ACTIVITY TELEMETRY</text>
   <text x="38" y="82" class="headline">Development Status</text>
-  <text x="38" y="106" class="sub">Live snapshot of what I’m building and where I’m active.</text>
-  <g transform="translate(38 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">PRIMARY DOMAIN</text><text x="16" y="46" class="value">ESPORTS OPERATIONS</text></g>
+  <text x="38" y="106" class="sub">A clean snapshot of my development activity.</text>
+  <g transform="translate(38 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">PRIMARY DOMAIN</text><text x="16" y="46" class="value">ESPORTS / NETWORKS</text></g>
   <g transform="translate(240 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">BUILD MODE</text><text x="16" y="46" class="value">AUTOMATION / DEV</text></g>
-  <g transform="translate(442 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">CURRENT SYSTEM</text><text x="16" y="46" class="value">${current.slice(0,24)}</text></g>
-  <g transform="translate(644 132)"><rect width="218" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">STATUS</text><circle cx="18" cy="45" r="5" fill="#E30118" filter="url(#glow)">${status.pulse ? '<animate attributeName="opacity" values=".35;1;.35" dur="1.4s" repeatCount="indefinite"/>' : ""}</circle><text x="32" y="50" class="value">${status.label}</text></g>
+  <g transform="translate(442 132)"><rect width="188" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">${systemLabel}</text><text x="16" y="46" class="value">${systemValue}</text></g>
+  <g transform="translate(644 132)"><rect width="218" height="62" rx="9" fill="#0b1327" stroke="#263b63"/><text x="16" y="22" class="label">STATUS</text><circle cx="18" cy="45" r="5" fill="${statusColor}" filter="url(#glow)">${!limited && status.pulse ? '<animate attributeName="opacity" values=".35;1;.35" dur="1.4s" repeatCount="indefinite"/>' : ""}</circle><text x="32" y="50" class="value">${statusLabel}</text></g>
   <rect x="-220" y="211" width="220" height="2" fill="#4570C0" opacity=".9"><animate attributeName="x" from="-220" to="900" dur="4.2s" repeatCount="indefinite"/></rect>
   </svg>`;
 }
 
-function focusCard(repos) {
+function focusCard(repos, limited) {
+  if (limited) {
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
+  <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#22314f" stroke-width="1" opacity=".25"/></pattern>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    .eyebrow{font-size:10px;font-weight:700;fill:#7890b7;letter-spacing:1.2px}
+    .title{font-size:28px;font-weight:800;fill:#fff}
+    .body{font-size:14px;font-weight:500;fill:#aabbd6}
+    .item{font-size:14px;font-weight:700;fill:#dbe7ff}
+    .small{font-size:11px;font-weight:600;fill:#7890b7}
+    .pill{font-size:11px;font-weight:800;fill:#fff;letter-spacing:.7px}
+  </style>
+</defs>
+<rect width="900" height="300" rx="16" fill="url(#bg)" stroke="#2b3b5f"/>
+<rect width="900" height="300" rx="16" fill="url(#grid)"/>
+<rect x="0" width="6" height="300" rx="3" fill="#E30118"/>
+<text x="38" y="44" class="eyebrow">CURRENT FOCUS // DEVELOPMENT ACTIVITY</text>
+<text x="38" y="94" class="title">Private work is not shown here</text>
+<text x="38" y="126" class="body">Only public repository activity is visible in this profile view.</text>
+<rect x="38" y="154" width="154" height="36" rx="18" fill="#1E2B57" stroke="#4570C0"/>
+<text x="115" y="177" text-anchor="middle" class="pill">LIMITED VIEW</text>
+<text x="38" y="226" class="eyebrow">REFRESH</text>
+<text x="38" y="254" class="item">Checks automatically every 2 hours</text>
+
+<line x1="455" y1="72" x2="455" y2="260" stroke="#263b63"/>
+<text x="500" y="82" class="eyebrow">WHAT I'M EXPLORING</text>
+<text x="500" y="124" class="item">AI-assisted development</text>
+<text x="500" y="158" class="item">Networking & infrastructure</text>
+<text x="500" y="192" class="item">Workflow automation</text>
+<text x="500" y="226" class="item">Internal operations tooling</text>
+<text x="500" y="260" class="item">Practical product engineering</text>
+</svg>`;
+  }
+
   const primary = repos[0];
   const status = statusFrom(primary.pushed_at);
-  const recent = repos.slice(0,3);
+  const recent = repos.filter(r => (Date.now() - new Date(r.pushed_at).getTime()) < 30 * 86400000).slice(0,3);
   const rows = recent.map((r,i) => {
-    const y = 120 + i*48;
+    const y = 118 + i*48;
     return `<g transform="translate(500 ${y})"><circle cx="0" cy="-4" r="4" fill="${i===0 ? "#E30118" : "#4570C0"}"/><text x="16" y="0" class="repo">${esc(prettyRepo(r.name))}</text><text x="340" y="0" text-anchor="end" class="ago">${ago(r.pushed_at)}</text></g>`;
   }).join("");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
   <defs>
     <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#111d3d"/></linearGradient>
     <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#22314f" stroke-width="1" opacity=".25"/></pattern>
     <style>
-      text{font-family:Arial,Helvetica,sans-serif}
-      .eyebrow{font-size:10px;font-weight:700;fill:#7890b7;letter-spacing:1.2px}.title{font-size:30px;font-weight:800;fill:#fff}
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+      .eyebrow{font-size:10px;font-weight:700;fill:#7890b7;letter-spacing:1.2px}.title{font-size:28px;font-weight:800;fill:#fff}
       .body{font-size:14px;font-weight:500;fill:#aabbd6}.repo{font-size:14px;font-weight:700;fill:#dbe7ff}.ago{font-size:11px;font-weight:650;fill:#7890b7}.pill{font-size:11px;font-weight:800;fill:#fff;letter-spacing:.7px}
     </style>
   </defs>
-  <rect width="900" height="320" rx="16" fill="url(#bg)" stroke="#2b3b5f"/><rect width="900" height="320" rx="16" fill="url(#grid)"/><rect x="0" width="6" height="320" rx="3" fill="#E30118"/>
-  <text x="38" y="44" class="eyebrow">CURRENT FOCUS // AUTO-DETECTED FROM GITHUB ACTIVITY</text>
-  <text x="38" y="98" class="title">${esc(prettyRepo(primary.name))}</text>
-  <text x="38" y="130" class="body">Most recently active development repository.</text>
-  <rect x="38" y="160" width="164" height="36" rx="18" fill="#E30118"/><text x="120" y="183" text-anchor="middle" class="pill">${status.label}</text>
-  <text x="38" y="238" class="eyebrow">LAST PUSH</text><text x="38" y="265" class="repo">${ago(primary.pushed_at)}</text>
-  <text x="38" y="291" class="ago">Refresh cadence: every 2 hours</text>
-  <line x1="458" y1="74" x2="458" y2="278" stroke="#263b63"/>
+  <rect width="900" height="300" rx="16" fill="url(#bg)" stroke="#2b3b5f"/><rect width="900" height="300" rx="16" fill="url(#grid)"/><rect x="0" width="6" height="300" rx="3" fill="#E30118"/>
+  <text x="38" y="44" class="eyebrow">CURRENT FOCUS // AUTO-DETECTED ACTIVITY</text>
+  <text x="38" y="94" class="title">${esc(prettyRepo(primary.name))}</text>
+  <text x="38" y="126" class="body">Most recently active development repository.</text>
+  <rect x="38" y="154" width="156" height="36" rx="18" fill="#E30118"/><text x="116" y="177" text-anchor="middle" class="pill">${status.label}</text>
+  <text x="38" y="226" class="eyebrow">LAST PUSH</text><text x="38" y="254" class="repo">${ago(primary.pushed_at)}</text>
+  <line x1="455" y1="72" x2="455" y2="260" stroke="#263b63"/>
   <text x="500" y="82" class="eyebrow">RECENT SYSTEMS</text>
-  ${rows}
-  <text x="500" y="286" class="ago">${process.env.PROFILE_TOKEN ? "Private + public activity connected" : "Public activity only • PROFILE_TOKEN enables private repos"}</text>
+  ${rows || '<text x="500" y="124" class="body">No other recent repositories.</text>'}
+  <text x="500" y="262" class="ago">Private + public activity connected</text>
   </svg>`;
 }
 
 const repos = await listRepos();
 if (!repos.length) throw new Error("No repositories available for activity detection.");
 
-let current = repos[0];
-let status = statusFrom(current.pushed_at);
+const limited = !process.env.PROFILE_TOKEN;
+const current = repos[0];
+const status = statusFrom(current.pushed_at);
 
-if (!process.env.PROFILE_TOKEN) {
-  const newestAgeDays = (Date.now() - new Date(current.pushed_at).getTime()) / 86400000;
-  if (newestAgeDays > 30) {
-    current = {
-      name: "PRIVATE-ACTIVITY",
-      full_name: owner + "/private-activity",
-      pushed_at: current.pushed_at
-    };
-    status = { label: "TOKEN REQUIRED", pulse: false };
-  }
-}
-
-fs.writeFileSync(path.join(outDir, "tech-panel-v3.svg"), techPanel(current, status));
-fs.writeFileSync(path.join(outDir, "current-focus-v2.svg"), focusCard([current, ...repos.filter(r => r.name !== current.name)]));
-console.log("Activity profile refreshed:", current.full_name, status.label);
-
-// telemetry-refresh-trigger: apply corrected private-activity logic
+fs.writeFileSync(path.join(outDir, "tech-panel-v4.svg"), techPanel(current, status, limited));
+fs.writeFileSync(path.join(outDir, "current-focus-v3.svg"), focusCard(repos, limited));
+console.log("Activity profile refreshed:", limited ? "limited public view" : current.full_name, limited ? "LIMITED VISIBILITY" : status.label);
