@@ -21,10 +21,28 @@ async function gh(url) {
   return r.json();
 }
 
+async function ghGraphQL(query, variables) {
+  const r = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+      ...headers,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+
+  if (!r.ok) throw new Error("GitHub GraphQL " + r.status + ": " + await r.text());
+
+  const payload = await r.json();
+  if (payload.errors?.length) throw new Error("GitHub GraphQL: " + JSON.stringify(payload.errors));
+  return payload.data;
+}
+
 async function listRepos() {
   const url = process.env.PROFILE_TOKEN
     ? "https://api.github.com/user/repos?visibility=all&affiliation=owner&sort=pushed&per_page=100"
     : "https://api.github.com/users/" + owner + "/repos?sort=pushed&per_page=100";
+
   const repos = await gh(url);
   return repos
     .filter(r => !r.archived && !r.fork && r.name !== owner)
@@ -59,8 +77,130 @@ function ago(date) {
   return Math.floor(days / 30) + "mo ago";
 }
 
+function monthKeys(count = 12) {
+  const keys = [];
+  const now = new Date();
+
+  for (let offset = count - 1; offset >= 0; offset -= 1) {
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - offset, 1));
+    keys.push(d.toISOString().slice(0, 7));
+  }
+
+  return keys;
+}
+
+async function contributionSnapshot() {
+  const now = new Date();
+  const from = new Date(now.getTime() - 365 * 86400000);
+
+  try {
+    const data = await ghGraphQL(
+      `query PortfolioActivity($login: String!, $from: DateTime!, $to: DateTime!) {
+        user(login: $login) {
+          contributionsCollection(from: $from, to: $to) {
+            contributionCalendar {
+              totalContributions
+              weeks {
+                contributionDays {
+                  date
+                  contributionCount
+                }
+              }
+            }
+          }
+        }
+      }`,
+      {
+        login: owner,
+        from: from.toISOString(),
+        to: now.toISOString(),
+      },
+    );
+
+    const calendar = data?.user?.contributionsCollection?.contributionCalendar;
+    if (!calendar) return null;
+
+    const days = calendar.weeks.flatMap(week => week.contributionDays);
+    const keys = monthKeys(12);
+    const monthlyMap = new Map(keys.map(key => [key, 0]));
+
+    for (const day of days) {
+      const key = day.date.slice(0, 7);
+      if (monthlyMap.has(key)) {
+        monthlyMap.set(key, monthlyMap.get(key) + day.contributionCount);
+      }
+    }
+
+    const last30Start = new Date(now.getTime() - 30 * 86400000);
+    const previous30Start = new Date(now.getTime() - 60 * 86400000);
+
+    const last30Days = days
+      .filter(day => new Date(day.date + "T23:59:59Z") >= last30Start)
+      .reduce((sum, day) => sum + day.contributionCount, 0);
+
+    const previous30Days = days
+      .filter(day => {
+        const date = new Date(day.date + "T23:59:59Z");
+        return date >= previous30Start && date < last30Start;
+      })
+      .reduce((sum, day) => sum + day.contributionCount, 0);
+
+    const activeDays = days.filter(day => day.contributionCount > 0).length;
+    const currentMonthKey = now.toISOString().slice(0, 7);
+    const currentMonth = monthlyMap.get(currentMonthKey) || 0;
+
+    let trendPercent = null;
+    if (previous30Days > 0) {
+      trendPercent = Math.round(((last30Days - previous30Days) / previous30Days) * 100);
+    } else if (last30Days > 0) {
+      trendPercent = 100;
+    }
+
+    return {
+      total: calendar.totalContributions,
+      activeDays,
+      currentMonth,
+      last30Days,
+      previous30Days,
+      trendPercent,
+      months: keys.map(key => ({
+        key,
+        label: new Date(key + "-01T00:00:00Z").toLocaleString("en", { month: "short", timeZone: "UTC" }),
+        count: monthlyMap.get(key) || 0,
+      })),
+    };
+  } catch (error) {
+    console.warn("Contribution telemetry unavailable:", error.message);
+    return null;
+  }
+}
+
+async function portfolioActivity(repos) {
+  const contributions = await contributionSnapshot();
+  const publicRepos = repos.filter(repo => !repo.private);
+  const latestPublicRepos = publicRepos.slice(0, 3).map(repo => ({
+    name: prettyRepo(repo.name),
+    url: repo.html_url,
+    pushedAt: repo.pushed_at,
+  }));
+
+  return {
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    refreshIntervalHours: 2,
+    visibility: process.env.PROFILE_TOKEN ? "authenticated-account" : "public-only",
+    repositories: {
+      total: repos.length,
+      public: publicRepos.length,
+      private: repos.filter(repo => repo.private).length,
+    },
+    contributions,
+    latestPublicRepos,
+  };
+}
+
 function techPanel(repo, status, limited) {
-  const current = esc(prettyRepo(repo?.name || "").toUpperCase());
+  const current = esc(prettyRepo(repo?.name || ""));
   const activityView = limited ? "PUBLIC ONLY" : "PRIVATE + PUBLIC";
   const systemValue = limited ? activityView : current.slice(0,24);
   const systemLabel = limited ? "ACTIVITY VIEW" : "CURRENT SYSTEM";
@@ -169,4 +309,13 @@ const status = statusFrom(current.pushed_at);
 
 fs.writeFileSync(path.join(outDir, "tech-panel-v4.svg"), techPanel(current, status, limited));
 fs.writeFileSync(path.join(outDir, "current-focus-v4.svg"), focusCard(repos, limited));
-console.log("Activity profile refreshed:", limited ? "limited public view" : current.full_name, limited ? "LIMITED VISIBILITY" : status.label);
+fs.writeFileSync(
+  path.join(outDir, "portfolio-activity.json"),
+  JSON.stringify(await portfolioActivity(repos), null, 2) + "\n",
+);
+
+console.log(
+  "Activity profile refreshed:",
+  limited ? "limited public view" : current.full_name,
+  limited ? "LIMITED VISIBILITY" : status.label,
+);
