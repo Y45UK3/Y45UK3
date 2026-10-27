@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T21:01:49.360Z",
+  "generatedAt": "2026-10-27T01:29:37.662Z",
   "refreshIntervalHours": 2,
   "visibility": "public-only",
   "repositories": {
@@ -12,9 +12,9 @@
     "total": 390,
     "activeDays": 21,
     "currentMonth": 124,
-    "last30Days": 258,
-    "previous30Days": 119,
-    "trendPercent": 117,
+    "last30Days": 156,
+    "previous30Days": 221,
+    "trendPercent": -29,
     "months": [
       {
         "key": "2025-11",
