@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T23:24:58.491Z",
+  "generatedAt": "2026-11-01T06:10:32.779Z",
   "refreshIntervalHours": 2,
   "visibility": "public-only",
   "repositories": {
@@ -11,16 +11,11 @@
   "contributions": {
     "total": 390,
     "activeDays": 21,
-    "currentMonth": 124,
+    "currentMonth": 0,
     "last30Days": 124,
     "previous30Days": 253,
     "trendPercent": -51,
     "months": [
-      {
-        "key": "2025-11",
-        "label": "Nov",
-        "count": 0
-      },
       {
         "key": "2025-12",
         "label": "Dec",
@@ -75,6 +70,11 @@
         "key": "2026-10",
         "label": "Oct",
         "count": 124
+      },
+      {
+        "key": "2026-11",
+        "label": "Nov",
+        "count": 0
       }
     ]
   },
