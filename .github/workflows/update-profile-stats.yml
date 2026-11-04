@@ -51,8 +51,8 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Notify Discord
-        if: always() && (github.event_name != 'schedule' || steps.commit.outputs.changed == 'true')
+      - name: Notify Discord on failure
+        if: failure()
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           REPO: ${{ github.repository }}
